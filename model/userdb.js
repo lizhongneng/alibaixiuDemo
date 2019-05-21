@@ -14,9 +14,9 @@ exports.query = (sql, callback) => {
     //执行sql语句
     connection.query(sql, (err,result) => {
         if (err) {
-            return console.log(err.message)
+            return callback(err,null)
         }
-        callback(result)
+        callback(null,result)
     })
     connection.end()
 }
